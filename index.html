@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Twarze Chernoffa</title>
+    <meta name="author" content="Blazej Chodorek"/>
+
+    <meta name="description" content="Aplikacja generująca twarze chernoffa na mapie Polski"/>
+    <meta name="keywords" content="chernoff, twarze, chernoffa"/>
+    <meta name="title" content="Twarze Chernoffa"/>
+
+<!--    Favicon-->
+    <!--<link rel="icon" href="img/favicon.png">-->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+<!--    Favicon end-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="web/js/app.js"></script>
+    <script type="text/javascript" src="web/js/ChernoffFaces.js"></script>
+    <script type="text/javascript" src="web/js/facesCoordinates.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+
+<!--Panel-->
+        <div class="col-sm-4 panel">
+
+            <ul class="list-group">
+
+                <li class="list-group-item">
+                    <h1>Twarze Chernoffa</h1>
+                </li>
+
+                <li class="list-group-item">
+                    <label class="fileContainer">
+                        <button type="button" class="btn btn-primary btn-block">Wczytaj nowy plik</button>
+                        <input type="file" id="file-input" accept=".json"/>
+                    </label>
+                    <div class="alert alert-success alert-dismissable fade in hidden" id="alertFile-success">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Plik wczytano poprawnie.</strong>
+                    </div>
+                    <div class="alert alert-danger alert-dismissable fade in hidden" id="alertFile-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Zapomniałeś o wczytaniu pliku.</strong>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
+                            <h4>oczy:</h4>
+                        </div>
+                        <div class="col-sm-9 panel-list-item" ng-app="">
+                            <form name="eyesForm">
+                                <select class="form-control" id="eyes">
+                                    <option value="">
+                                    <option value="powierzchnia">powierzchnia [km²]
+                                    <option value="ludnosc">ludność (2016)
+                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
+                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
+                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
+                            <h4>usta:</h4>
+                        </div>
+                        <div class="col-sm-9 panel-list-item" ng-app="">
+                            <form>
+                                <select class="form-control" id="mounth" ng-model="usta">
+                                    <option value="">
+                                    <option value="powierzchnia">powierzchnia [km²]
+                                    <option value="ludnosc">ludność (2016)
+                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
+                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
+                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--<span ng-switch="nos">-->
+                    <!--<span ng-switch-when="PKB">-->
+                    <!--<h1>PKB</h1>-->
+                    <!--</span>-->
+                    <!--<span ng-switch-when="ludnosc">-->
+                    <!--<h1>ludnosc</h1>-->
+                    <!--</span>-->
+                    <!--<span ng-switch-when="urbanizacja">-->
+                    <!--<h1>urbanizacja</h1>-->
+                    <!--</span>-->
+                    <!--</span>-->
+                    <!--</span>-->
+
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
+                            <h4>nos:</h4>
+                        </div>
+                        <div class="col-sm-9 panel-list-item" ng-app="">
+                            <form>
+                                <select class="form-control" id="nose" ng-model="nos">
+                                    <option value="">
+                                    <option value="powierzchnia">powierzchnia [km²]
+                                    <option value="ludnosc">ludność (2016)
+                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
+                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
+                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
+                            <h4>brwi:</h4>
+                        </div>
+                        <div class="col-sm-9 panel-list-item" ng-app="">
+                            <form>
+                                <select class="form-control" id="eyebrow" ng-model="brwi">
+                                    <option value="">
+                                    <option value="powierzchnia">powierzchnia [km²]
+                                    <option value="ludnosc">ludność (2016)
+                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
+                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
+                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
+                            <h4>głowa:</h4>
+                        </div>
+                        <div class="col-sm-9 panel-list-item" ng-app="">
+                            <form>
+                                <select class="form-control" id="head" ng-model="glowa">
+                                    <option value="">
+                                    <option value="powierzchnia">powierzchnia [km²]
+                                    <option value="ludnosc">ludność (2016)
+                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
+                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
+                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <button type="button" id="generateFaces" class="btn btn-primary btn-block">
+                        Generuj twarze na mapie
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
+<!--Panel end-->
+
+<!--Map-->
+        <div class="col-sm-8 map" style="padding: 20px;">
+            <canvas id="mapCanvas" width="660" height="615"</canvas>
+        </div>
+<!--Map end-->
+
+    </div>
+</div>
+
+<!--Footer-->
+<div class="footer">
+    <p>Błażej Chodorek & Marcin Podkowa &copy 2017</p>
+</div>
+<!--Footer end-->
+
+</body>
+</html>
