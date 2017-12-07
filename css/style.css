@@ -2,6 +2,12 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+.error {
+    font-size: smaller;
+    color: #D00000;
+    width: 100%;
+}
+
 .fileContainer {
     overflow: hidden;
     position: relative;

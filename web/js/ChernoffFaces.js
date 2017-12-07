@@ -40,40 +40,43 @@ function ChernoffFaces() {
     this.drawFaces = function (data) {
 
         var dataArrays = getDataArrays(data);
-        var form = getFromValuesbyId("eyes", "mounth", "nose", "eyebrow", "head");
-        var parameters = getParameters(dataArrays, form);
+        var form = getFormValuesbyId("eyes", "mounth", "nose", "eyebrow", "head");
 
-        var map = new Image();
-        map.src = "map.png";
+        if (form.validate) {
 
-        var dynamicCanvas = document.createElement("canvas");
-        var dynamicContext = dynamicCanvas.getContext("2d");
-        dynamicCanvas.height = "620";
-        dynamicCanvas.width = "660";
+            var parameters = getParameters(dataArrays, form.values);
 
-        var canvas = document.getElementById(canvasId);
-        var ctx = canvas.getContext("2d");
+            var map = new Image();
+            map.src = "map.png";
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+            var dynamicCanvas = document.createElement("canvas");
+            var dynamicContext = dynamicCanvas.getContext("2d");
+            dynamicCanvas.height = "620";
+            dynamicCanvas.width = "660";
 
-        map.onload = function () {
-            dynamicContext.drawImage(map, 0, 0);
+            var canvas = document.getElementById(canvasId);
+            var ctx = canvas.getContext("2d");
 
-            var coordinates = facesCoordinates.facesCoordinates;
-            for (var id in coordinates) {
-                drawFace(ctx,
-                    /*x*/coordinates[id].x, /*y*/coordinates[id].y,
-                    /*head*/getCompartment(parameters.head, /*id wojewodztwa*/parseInt(id)),
-                    /*eyebrow*/getCompartment(parameters.eyebrow, parseInt(id)),
-                    /*eyes*/getCompartment(parameters.eyes, parseInt(id)),
-                    /*nose*/getCompartment(parameters.nose, parseInt(id)),
-                    /*mounth*/getCompartment(parameters.mounth, parseInt(id)));
-            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            ctx = ctx.drawImage(dynamicCanvas, 0, 0);
-            // window.open(canvas.toDataURL());
-        };
+            map.onload = function () {
+                dynamicContext.drawImage(map, 0, 0);
 
+                var coordinates = facesCoordinates.facesCoordinates;
+                for (var id in coordinates) {
+                    drawFace(ctx,
+                        /*x*/coordinates[id].x, /*y*/coordinates[id].y,
+                        /*head*/getCompartment(parameters.head, /*id wojewodztwa*/parseInt(id)),
+                        /*eyebrow*/getCompartment(parameters.eyebrow, parseInt(id)),
+                        /*eyes*/getCompartment(parameters.eyes, parseInt(id)),
+                        /*nose*/getCompartment(parameters.nose, parseInt(id)),
+                        /*mounth*/getCompartment(parameters.mounth, parseInt(id)));
+                }
+
+                ctx = ctx.drawImage(dynamicCanvas, 0, 0);
+                // window.open(canvas.toDataURL());
+            };
+        }
     };
 
     /**
@@ -112,31 +115,60 @@ function ChernoffFaces() {
 
     /**
      * Funkcja pobierająca dane z formularza.
-     * @param {string} eyesId
-     * @param {string} mounthId
-     * @param {string} noseId
-     * @param {string} eyebrowId
-     * @param {string} headId
-     * @return {{}} - Dane z formularza.
+     * @param {string} eyesId - id z formularza.
+     * @param {string} mounthId - id z formularza.
+     * @param {string} noseId - id z formularza.
+     * @param {string} eyebrowId - id z formularza.
+     * @param {string} headId - id z formularza.
+     * @return {{values: {}, validate: {}}} - Dane z formularza.
      */
-    function getFromValuesbyId(eyesId, mounthId, noseId, eyebrowId, headId) {
+    function getFormValuesbyId(eyesId, mounthId, noseId, eyebrowId, headId) {
 
         event.preventDefault();
-        var form = {};
-        form.eyesInput = $('#' + eyesId).val();
-        form.mounthInput = $('#' + mounthId).val();
-        form.noseInput = $('#' + noseId).val();
-        form.eyebrowInput = $('#' + eyebrowId).val();
-        form.headInput = $('#' + headId).val();
+        var values = {};
+        values.eyesInput = $('#' + eyesId).val();
+        values.mounthInput = $('#' + mounthId).val();
+        values.noseInput = $('#' + noseId).val();
+        values.eyebrowInput = $('#' + eyebrowId).val();
+        values.headInput = $('#' + headId).val();
+        $(".error").text("");
 
-        return form;
+        var validate = {};
+        if (values.eyesInput === "null") {
+            validate.eyesInput = "Wybierz jakąś opcję";
+            $("#error-eyes").text(validate.eyesInput);
+        }
+
+        if (values.mounthInput === "null") {
+            validate.mounthInput = "Wybierz jakąś opcję";
+            $("#error-mounth").text(validate.mounthInput);
+        }
+
+        if (values.noseInput === "null") {
+            validate.noseInput = "Wybierz jakąś opcję";
+            $("#error-nose").text(validate.noseInput);
+        }
+
+        if (values.eyebrowInput === "null") {
+            validate.eyebrowInput = "Wybierz jakąś opcję";
+            $("#error-eyebrow").text(validate.eyebrowInput);
+        }
+
+        if (values.headInput === "null") {
+            validate.headInput = "Wybierz jakąś opcję";
+            $("#error-head").text(validate.headInput);
+        }
+
+        jQuery.isEmptyObject(validate) ? validate = true : validate = false;
+
+        return {"values": values, "validate": validate};
     }
 
     /**
-     * Funkcja przydzielająca dane do przedziałów.
+     * Funkcja przydzielająca dane do przedziałów 1, 2 lub 3.
      * @param array - Tablica z danymi.
      * @param {number} voivodeshipId - ID województwa, dostępne w pliku wojewodztwa.json.
-     * @return {number} - Numer przedzalu dla podanej kategorii
+     * @return {number} - Numer przedzalu dla podanej kategorii (1, 2, 3).
      */
     function getCompartment(array, voivodeshipId) {
 
@@ -316,10 +348,10 @@ function ChernoffFaces() {
     /**
      * Funkcja rysująca elipsę.
      * @param {CanvasRenderingContext2D} ctx
-     * @param x - Współrzędna X środka elipsy.
-     * @param y - Współrzędna Y środka elipsy.
-     * @param w - Szerokość elipsy.
-     * @param h - Wysokość elipsy.
+     * @param {number} x - Współrzędna X środka elipsy.
+     * @param {number} y - Współrzędna Y środka elipsy.
+     * @param {number} w - Szerokość elipsy.
+     * @param {number} h - Wysokość elipsy.
      */
     function drawEllipseByCenter(ctx, x, y, w, h) {
 
@@ -329,10 +361,10 @@ function ChernoffFaces() {
     /**
      * Funkcja rysująca elipsę.
      * @param {CanvasRenderingContext2D} ctx
-     * @param x - Współrzędna X elipsy.
-     * @param y - Współrzędna Y elipsy.
-     * @param w - Szerokość elipsy.
-     * @param h - Wysokość elipsy.
+     * @param {number} x - Współrzędna X elipsy.
+     * @param {number} y - Współrzędna Y elipsy.
+     * @param {number} w - Szerokość elipsy.
+     * @param {number} h - Wysokość elipsy.
      */
     function drawEllipse(ctx, x, y, w, h) {
 

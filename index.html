@@ -70,6 +70,7 @@
                 </li>
 
                 <li class="list-group-item">
+                    <span class="error" id="error-eyes"></span>
                     <div class="row">
                         <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
                             <h4>oczy:</h4>
@@ -77,7 +78,7 @@
                         <div class="col-sm-9 panel-list-item" ng-app="">
                             <form name="eyesForm">
                                 <select class="form-control" id="eyes">
-                                    <option value="">
+                                    <option value="null">
                                     <option value="powierzchnia">powierzchnia [km²]
                                     <option value="ludnosc">ludność (2016)
                                     <option value="urbanizacja">poziom urbanizacji (2016) [%]
@@ -90,6 +91,7 @@
                 </li>
 
                 <li class="list-group-item">
+                    <span class="error" id="error-mounth"></span>
                     <div class="row">
                         <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
                             <h4>usta:</h4>
@@ -97,7 +99,7 @@
                         <div class="col-sm-9 panel-list-item" ng-app="">
                             <form>
                                 <select class="form-control" id="mounth" ng-model="usta">
-                                    <option value="">
+                                    <option value="null">
                                     <option value="powierzchnia">powierzchnia [km²]
                                     <option value="ludnosc">ludność (2016)
                                     <option value="urbanizacja">poziom urbanizacji (2016) [%]
@@ -107,23 +109,10 @@
                             </form>
                         </div>
                     </div>
-
-                    <!--<span ng-switch="nos">-->
-                    <!--<span ng-switch-when="PKB">-->
-                    <!--<h1>PKB</h1>-->
-                    <!--</span>-->
-                    <!--<span ng-switch-when="ludnosc">-->
-                    <!--<h1>ludnosc</h1>-->
-                    <!--</span>-->
-                    <!--<span ng-switch-when="urbanizacja">-->
-                    <!--<h1>urbanizacja</h1>-->
-                    <!--</span>-->
-                    <!--</span>-->
-                    <!--</span>-->
-
                 </li>
 
                 <li class="list-group-item">
+                    <span class="error" id="error-nose"></span>
                     <div class="row">
                         <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
                             <h4>nos:</h4>
@@ -131,7 +120,7 @@
                         <div class="col-sm-9 panel-list-item" ng-app="">
                             <form>
                                 <select class="form-control" id="nose" ng-model="nos">
-                                    <option value="">
+                                    <option value="null">
                                     <option value="powierzchnia">powierzchnia [km²]
                                     <option value="ludnosc">ludność (2016)
                                     <option value="urbanizacja">poziom urbanizacji (2016) [%]
@@ -144,6 +133,7 @@
                 </li>
 
                 <li class="list-group-item">
+                    <span class="error" id="error-eyebrow"></span>
                     <div class="row">
                         <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
                             <h4>brwi:</h4>
@@ -151,7 +141,7 @@
                         <div class="col-sm-9 panel-list-item" ng-app="">
                             <form>
                                 <select class="form-control" id="eyebrow" ng-model="brwi">
-                                    <option value="">
+                                    <option value="null">
                                     <option value="powierzchnia">powierzchnia [km²]
                                     <option value="ludnosc">ludność (2016)
                                     <option value="urbanizacja">poziom urbanizacji (2016) [%]
@@ -164,6 +154,7 @@
                 </li>
 
                 <li class="list-group-item">
+                    <span class="error" id="error-head"></span>
                     <div class="row">
                         <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
                             <h4>głowa:</h4>
@@ -171,7 +162,7 @@
                         <div class="col-sm-9 panel-list-item" ng-app="">
                             <form>
                                 <select class="form-control" id="head" ng-model="glowa">
-                                    <option value="">
+                                    <option value="null">
                                     <option value="powierzchnia">powierzchnia [km²]
                                     <option value="ludnosc">ludność (2016)
                                     <option value="urbanizacja">poziom urbanizacji (2016) [%]
@@ -205,7 +196,7 @@
 
 <!--Footer-->
 <div class="footer">
-    <p>Błażej Chodorek & Marcin Podkowa &copy 2017</p>
+    <p>Błażej Chodorek &copy 2017</p>
 </div>
 <!--Footer end-->
 
