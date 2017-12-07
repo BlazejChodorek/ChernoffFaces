@@ -7,7 +7,7 @@
     -   [drawFaces](#drawfaces)
 -   [canvasId](#canvasid)
 -   [getDataArrays](#getdataarrays)
--   [getFromValuesbyId](#getfromvaluesbyid)
+-   [getFormValuesbyId](#getformvaluesbyid)
 -   [getCompartment](#getcompartment)
 -   [drawFace](#drawface)
 -   [drawNose](#drawnose)
@@ -47,30 +47,30 @@ Funkcja tworząca tablice z danymi.
 
 Returns **{}** Tablice z danymi.
 
-## getFromValuesbyId
+## getFormValuesbyId
 
 Funkcja pobierająca dane z formularza.
 
 **Parameters**
 
--   `eyesId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
--   `mounthId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
--   `noseId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
--   `eyebrowId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
--   `headId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `eyesId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** id z formularza.
+-   `mounthId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** id z formularza.
+-   `noseId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** id z formularza.
+-   `eyebrowId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** id z formularza.
+-   `headId` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** id z formularza.
 
-Returns **{}** Dane z formularza.
+Returns **{values: {}, validate: {}}** Dane z formularza.
 
 ## getCompartment
 
-Funkcja przydzielająca dane do przedziałów.
+Funkcja przydzielająca dane do przedziałów 1, 2 lub 3.
 
 **Parameters**
 
 -   `array`  Tablica z danymi.
 -   `voivodeshipId` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** ID województwa, dostępne w pliku wojewodztwa.json.
 
-Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Numer przedzalu dla podanej kategorii
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Numer przedzalu dla podanej kategorii (1, 2, 3).
 
 ## drawFace
 
@@ -149,10 +149,9 @@ Funkcja rysująca elipsę.
 **Parameters**
 
 -   `ctx` **[CanvasRenderingContext2D](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D)**
--   `x`  Współrzędna X środka elipsy.
--   `y`  Współrzędna Y środka elipsy.
--   `w`  Szerokość elipsy.
--   `h`  Wysokość elipsy.
+-   `x` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Współrzędna X środka elipsy.
+-   `y` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Współrzędna Y środka elipsy.
+-   `w` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Szerokość elipsy. -   `h` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Wysokość elipsy.
 
 ## drawEllipse
 
@@ -161,10 +160,9 @@ Funkcja rysująca elipsę.
 **Parameters**
 
 -   `ctx` **[CanvasRenderingContext2D](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D)**
--   `x`  Współrzędna X elipsy.
--   `y`  Współrzędna Y elipsy.
--   `w`  Szerokość elipsy.
--   `h`  Wysokość elipsy.
+-   `x` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Współrzędna X elipsy.
+-   `y` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Współrzędna Y elipsy.
+-   `w` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Szerokość elipsy. -   `h` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Wysokość elipsy.
 
 ## getParameters
 
@@ -176,7 +174,6 @@ Funkcja przypisująca dane dotyczące województw do danych z formularza.
 -   `form`  Tablica zawierająca dane z formularza.
 
 Returns **{eyes: any, mounth: any, nose: any, eyebrow: any, head: any}** JSON z informacją do jakiej części twarzy jakie dane zostały przypisane.
-
 ## facesCoordinates.js
 
 Współrzędne województw na mapie.
