@@ -3,26 +3,50 @@
     {
       "id": 0,
       "wojewodztwo": "dolnośląskie",
-      "ludność": 2904198,
-      "bezrobocie": 7.3
+      "ludność": {
+        "value": 2904198,
+        "unit": "(2016)"
+      },
+      "bezrobocie": {
+        "value": 7.3,
+        "unit": "%"
+      }
     },
     {
       "id": 1,
       "wojewodztwo": "kujawsko-pomorskie",
-      "ludność": 2086210,
-      "bezrobocie": 12.1
+      "ludność": {
+        "value": 2086210,
+        "unit": "(2016)"
+      },
+      "bezrobocie": {
+        "value": 12.1,
+        "unit": "%"
+      }
     },
     {
       "id": 2,
       "wojewodztwo": "lubelskie",
-      "ludność": 2139726,
-      "bezrobocie": 10.4
+      "ludność": {
+        "value": 2139726,
+        "unit": "(2016)"
+      },
+      "bezrobocie": {
+        "value": 10.4,
+        "unit": "%"
+      }
     },
     {
       "id": 3,
       "wojewodztwo": "lubuskie",
-      "ludność": 1018084,
-      "bezrobocie": 8.7
+      "ludność": {
+        "value": 1018084,
+        "unit": "(2016)"
+      },
+      "bezrobocie": {
+        "value": 8.7,
+        "unit": "%"
+      }
     }
   ]
 }

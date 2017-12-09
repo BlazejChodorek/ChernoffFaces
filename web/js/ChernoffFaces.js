@@ -130,14 +130,14 @@ function ChernoffFaces() {
             "                    </li>\n" +
             "\n" +
             "                    <li class=\"list-group-item\">\n" +
-            "                        <span class=\"error\" id=\"error-mounth\"></span>\n" +
+            "                        <span class=\"error\" id=\"error-mouth\"></span>\n" +
             "                        <div class=\"row\">\n" +
             "                            <div class=\"col-sm-1\" style=\"padding: 5px; padding-right: 40px\">\n" +
             "                                <h4>usta:</h4>\n" +
             "                            </div>\n" +
             "                            <div class=\"col-sm-9 panel-list-item\">\n" +
             "                                <form class=\"chernoff-form\">\n" +
-            "                                    <select class=\"form-control\" id=\"mounth\"></select>\n" +
+            "                                    <select class=\"form-control\" id=\"mouth\"></select>\n" +
             "                                </form>\n" +
             "                            </div>\n" +
             "                        </div>\n" +
@@ -208,12 +208,45 @@ function ChernoffFaces() {
     }
 
     /**
+     * Funkcja generująca legendę mapy.
+     * @param param - Tablica z informacją do jakiej częsci twarzy jakie dane zostały przypisane.
+     */
+    function generateMapLegend(param) {
+
+        var eyesIndexes = getIndexes(param.eyes);
+        var mouthIndexes = getIndexes(param.mouth);
+        var noseIndexes = getIndexes(param.nose);
+        var eyebrowIndexes = getIndexes(param.eyebrow);
+        var headIndexes = getIndexes(param.head);
+
+        $("#eyes-map-legend-1").html(eyesIndexes.index0 + " - " + eyesIndexes.index1);
+        $("#eyes-map-legend-2").html(eyesIndexes.index1 + " - " + eyesIndexes.index2);
+        $("#eyes-map-legend-3").html(eyesIndexes.index2 + " - " + eyesIndexes.index3);
+
+        $("#mouth-map-legend-1").html(mouthIndexes.index0 + " - " + mouthIndexes.index1);
+        $("#mouth-map-legend-2").html(mouthIndexes.index1 + " - " + mouthIndexes.index2);
+        $("#mouth-map-legend-3").html(mouthIndexes.index2 + " - " + mouthIndexes.index3);
+
+        $("#nose-map-legend-1").html(noseIndexes.index0 + " - " + noseIndexes.index1);
+        $("#nose-map-legend-2").html(noseIndexes.index1 + " - " + noseIndexes.index2);
+        $("#nose-map-legend-3").html(noseIndexes.index2 + " - " + noseIndexes.index3);
+
+        $("#eyebrow-map-legend-1").html(eyebrowIndexes.index0 + " - " + eyebrowIndexes.index1);
+        $("#eyebrow-map-legend-2").html(eyebrowIndexes.index1 + " - " + eyebrowIndexes.index2);
+        $("#eyebrow-map-legend-3").html(eyebrowIndexes.index2 + " - " + eyebrowIndexes.index3);
+
+        $("#head-map-legend-1").html(headIndexes.index0 + " - " + headIndexes.index1);
+        $("#head-map-legend-2").html(headIndexes.index1 + " - " + headIndexes.index2);
+        $("#head-map-legend-3").html(headIndexes.index2 + " - " + headIndexes.index3);
+    }
+
+    /**
      * Funkcja rysująca wszystkie twarze na mapie.
      * @param data - JSON z danymi.
      */
     function drawFaces(data) {
 
-        var form = getFormValuesbyId("eyes", "mounth", "nose", "eyebrow", "head");
+        var form = getFormValuesbyId("eyes", "mouth", "nose", "eyebrow", "head");
 
         if (form.validate) {
 
@@ -244,7 +277,7 @@ function ChernoffFaces() {
                         /*eyebrow*/getCompartment(parameters.eyebrow, parseInt(id)),
                         /*eyes*/getCompartment(parameters.eyes, parseInt(id)),
                         /*nose*/getCompartment(parameters.nose, parseInt(id)),
-                        /*mounth*/getCompartment(parameters.mounth, parseInt(id)));
+                        /*mouth*/getCompartment(parameters.mouth, parseInt(id)));
                 }
 
                 ctx = ctx.drawImage(dynamicCanvas, 0, 0);
@@ -278,18 +311,18 @@ function ChernoffFaces() {
     /**
      * Funkcja pobierająca dane z formularza.
      * @param {string} eyesId - id z formularza.
-     * @param {string} mounthId - id z formularza.
+     * @param {string} mouthId - id z formularza.
      * @param {string} noseId - id z formularza.
      * @param {string} eyebrowId - id z formularza.
      * @param {string} headId - id z formularza.
      * @return {{values: {}, validate: {}}} - Dane z formularza.
      */
-    function getFormValuesbyId(eyesId, mounthId, noseId, eyebrowId, headId) {
+    function getFormValuesbyId(eyesId, mouthId, noseId, eyebrowId, headId) {
 
         event.preventDefault();
         var values = {};
         values.eyesInput = $('#' + eyesId).val();
-        values.mounthInput = $('#' + mounthId).val();
+        values.mouthInput = $('#' + mouthId).val();
         values.noseInput = $('#' + noseId).val();
         values.eyebrowInput = $('#' + eyebrowId).val();
         values.headInput = $('#' + headId).val();
@@ -301,9 +334,9 @@ function ChernoffFaces() {
             $("#error-eyes").text(validate.eyesInput);
         }
 
-        if (values.mounthInput === "null") {
-            validate.mounthInput = "Wybierz jakąś opcję";
-            $("#error-mounth").text(validate.mounthInput);
+        if (values.mouthInput === "null") {
+            validate.mouthInput = "Wybierz jakąś opcję";
+            $("#error-mouth").text(validate.mouthInput);
         }
 
         if (values.noseInput === "null") {
@@ -342,6 +375,17 @@ function ChernoffFaces() {
         if ((array[voivodeshipId] >= array[index1]) && (array[voivodeshipId] <= array[index2])) return 2;
     }
 
+    function getIndexes(array) {
+
+        array.sort();
+        var index0 = array[0];
+        var index1 = array[Math.round(array.length / 3)];
+        var index2 = array[(Math.round(array.length / 3)) * 2];
+        var index3 = array[array.length - 1];
+
+        return {"index0": index0, "index1": index1, "index2": index2, "index3": index3};
+    }
+
     /**
      * Funkcja rysująca jedną twarz.
      * @param {CanvasRenderingContext2D} ctx
@@ -351,15 +395,15 @@ function ChernoffFaces() {
      * @param {number} eyebrowType - Typ brwi (1, 2, 3).
      * @param {number} eyesType - Typ oczu (1, 2, 3).
      * @param {number} noseType - Typ nosa (1, 2, 3).
-     * @param {number} mounthType - Typ ust (1, 2, 3).
+     * @param {number} mouthType - Typ ust (1, 2, 3).
      */
-    function drawFace(ctx, x, y, headType, eyebrowType, eyesType, noseType, mounthType) {
+    function drawFace(ctx, x, y, headType, eyebrowType, eyesType, noseType, mouthType) {
 
         drawHead(ctx, x, y, headType);
         drawEyebrow(ctx, x, y, eyebrowType);
         drawEyes(ctx, x, y, eyesType);
         drawNose(ctx, x, y, noseType);
-        drawMouth(ctx, x, y, mounthType);
+        drawMouth(ctx, x, y, mouthType);
     }
 
     /**
@@ -552,11 +596,11 @@ function ChernoffFaces() {
      * Funkcja przypisująca dane dotyczące województw do danych z formularza.
      * @param dataArrays - Tablica zawierająca dane z pliku wojewodztwa.json podzielone na tablice.
      * @param form - Tablica zawierająca dane z formularza.
-     * @return {{eyes: *, mounth: *, nose: *, eyebrow: *, head: *}} - JSON z informacją do jakiej części twarzy jakie dane zostały przypisane.
+     * @return {{eyes: *, mouth: *, nose: *, eyebrow: *, head: *}} - JSON z informacją do jakiej części twarzy jakie dane zostały przypisane.
      */
     function getParameters(data, dataArrays, form) {
         var eyes;
-        var mounth;
+        var mouth;
         var nose;
         var eyebrow;
         var head;
@@ -566,8 +610,8 @@ function ChernoffFaces() {
             if (form.eyesInput == options[i])
                 eyes = dataArrays[options[i]];
 
-            if (form.mounthInput == options[i])
-                mounth = dataArrays[options[i]];
+            if (form.mouthInput == options[i])
+                mouth = dataArrays[options[i]];
 
             if (form.noseInput == options[i])
                 nose = dataArrays[options[i]];
@@ -579,7 +623,11 @@ function ChernoffFaces() {
                 head = dataArrays[options[i]];
         }
 
-        return {"eyes": eyes, "mounth": mounth, "nose": nose, "eyebrow": eyebrow, "head": head};
+        var parameters = {"eyes": eyes, "mouth": mouth, "nose": nose, "eyebrow": eyebrow, "head": head};
+
+        generateMapLegend(parameters);
+
+        return parameters;
     }
 
     /**
