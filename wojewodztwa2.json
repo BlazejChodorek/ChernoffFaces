@@ -1,0 +1,28 @@
+{
+  "wojewodztwa": [
+    {
+      "id": 0,
+      "wojewodztwo": "dolnośląskie",
+      "ludność": 2904198,
+      "bezrobocie": 7.3
+    },
+    {
+      "id": 1,
+      "wojewodztwo": "kujawsko-pomorskie",
+      "ludność": 2086210,
+      "bezrobocie": 12.1
+    },
+    {
+      "id": 2,
+      "wojewodztwo": "lubelskie",
+      "ludność": 2139726,
+      "bezrobocie": 10.4
+    },
+    {
+      "id": 3,
+      "wojewodztwo": "lubuskie",
+      "ludność": 1018084,
+      "bezrobocie": 8.7
+    }
+  ]
+}

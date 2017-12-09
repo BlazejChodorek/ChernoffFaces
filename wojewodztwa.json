@@ -4,7 +4,7 @@
       "id": 0,
       "wojewodztwo": "dolnośląskie",
       "powierzchnia": 19946.70,
-      "ludnosc": 2904198,
+      "ludność": 2904198,
       "urbanizacja": 69.1,
       "bezrobocie": 7.3,
       "PKB": 50031
@@ -13,7 +13,7 @@
       "id": 1,
       "wojewodztwo": "kujawsko-pomorskie",
       "powierzchnia": 17971.34,
-      "ludnosc": 2086210,
+      "ludność": 2086210,
       "urbanizacja": 59.6,
       "bezrobocie": 12.1,
       "PKB": 36379
@@ -22,7 +22,7 @@
       "id": 2,
       "wojewodztwo": "lubelskie",
       "powierzchnia": 25122.46,
-      "ludnosc": 2139726,
+      "ludność": 2139726,
       "urbanizacja": 46.4,
       "bezrobocie": 10.4,
       "PKB": 31170
@@ -31,7 +31,7 @@
       "id": 3,
       "wojewodztwo": "lubuskie",
       "powierzchnia": 13987.93,
-      "ludnosc": 1018084,
+      "ludność": 1018084,
       "urbanizacja": 65.0,
       "bezrobocie": 8.7,
       "PKB": 37635
@@ -40,7 +40,7 @@
       "id": 4,
       "wojewodztwo": "łódzkie",
       "powierzchnia": 18218.95,
-      "ludnosc": 2493603,
+      "ludność": 2493603,
       "urbanizacja": 63.1,
       "bezrobocie": 8.6,
       "PKB": 41839
@@ -49,7 +49,7 @@
       "id": 5,
       "wojewodztwo": "małopolskie",
       "powierzchnia": 15182.79,
-      "ludnosc": 3372618,
+      "ludność": 3372618,
       "urbanizacja": 48.5,
       "bezrobocie": 6.7,
       "PKB": 39834
@@ -58,7 +58,7 @@
       "id": 6,
       "wojewodztwo": "mazowieckie",
       "powierzchnia": 35558.47,
-      "ludnosc": 5349114,
+      "ludność": 5349114,
       "urbanizacja": 64.3,
       "bezrobocie": 7.2,
       "PKB": 71659
@@ -67,7 +67,7 @@
       "id": 7,
       "wojewodztwo": "opolskie",
       "powierzchnia": 9411.87,
-      "ludnosc": 996011,
+      "ludność": 996011,
       "urbanizacja": 51.9,
       "bezrobocie": 9.0,
       "PKB": 36299
@@ -76,7 +76,7 @@
       "id": 8,
       "wojewodztwo": "podkarpackie",
       "powierzchnia": 17845.76,
-      "ludnosc": 2127657,
+      "ludność": 2127657,
       "urbanizacja": 41.3,
       "bezrobocie": 11.6,
       "PKB": 31642
@@ -85,7 +85,7 @@
       "id": 9,
       "wojewodztwo": "podlaskie",
       "powierzchnia": 20187.02,
-      "ludnosc": 1188800,
+      "ludność": 1188800,
       "urbanizacja": 60.6,
       "bezrobocie": 10.4,
       "PKB": 32350
@@ -94,7 +94,7 @@
       "id": 10,
       "wojewodztwo": "pomorskie",
       "powierzchnia": 18310.34,
-      "ludnosc": 2307710,
+      "ludność": 2307710,
       "urbanizacja": 64.4,
       "bezrobocie": 7.3,
       "PKB": 42558
@@ -103,7 +103,7 @@
       "id": 11,
       "wojewodztwo": "śląskie",
       "powierzchnia": 12333.09,
-      "ludnosc": 4570849,
+      "ludność": 4570849,
       "urbanizacja": 77.1,
       "bezrobocie": 6.6,
       "PKB": 46499
@@ -112,7 +112,7 @@
       "id": 12,
       "wojewodztwo": "świętokrzyskie",
       "powierzchnia": 11710.50,
-      "ludnosc": 1257179,
+      "ludność": 1257179,
       "urbanizacja": 44.6,
       "bezrobocie": 10.8,
       "PKB": 32640
@@ -121,7 +121,7 @@
       "id": 13,
       "wojewodztwo": "warmińsko-mazurskie",
       "powierzchnia": 24173.47,
-      "ludnosc": 1439675,
+      "ludność": 1439675,
       "urbanizacja": 59.1,
       "bezrobocie": 14.2,
       "PKB": 31955
@@ -130,7 +130,7 @@
       "id": 14,
       "wojewodztwo": "wielkopolskie",
       "powierzchnia": 29826.50,
-      "ludnosc": 3475323,
+      "ludność": 3475323,
       "urbanizacja": 54.9,
       "bezrobocie": 5.0,
       "PKB": 47992
@@ -139,7 +139,7 @@
       "id": 15,
       "wojewodztwo": "zachodniopomorskie",
       "powierzchnia": 22892.48,
-      "ludnosc": 1710482,
+      "ludność": 1710482,
       "urbanizacja": 68.6,
       "bezrobocie": 11.0,
       "PKB": 37461

@@ -2,6 +2,10 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+.map {
+    padding: 20px;
+}
+
 .error {
     font-size: smaller;
     color: #D00000;
@@ -36,7 +40,7 @@ body {
     bottom: 0;
     width: 100%;
     background-color: #0f0f0f;
-    color: #414141;
+    color: #4e4e4e;
     text-align: center;
     font-size: smaller;
 }

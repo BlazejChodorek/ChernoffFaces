@@ -8,7 +8,7 @@
     <meta name="keywords" content="chernoff, twarze, chernoffa"/>
     <meta name="title" content="Twarze Chernoffa"/>
 
-<!--    Favicon-->
+    <!--    Favicon-->
     <!--<link rel="icon" href="img/favicon.png">-->
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -28,7 +28,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-<!--    Favicon end-->
+    <!--    Favicon end-->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,151 +45,17 @@
 <div class="container-fluid">
     <div class="row">
 
-<!--Panel-->
+        <!--Panel-->
         <div class="col-sm-4 panel">
-
-            <ul class="list-group">
-
-                <li class="list-group-item">
-                    <h1>Twarze Chernoffa</h1>
-                </li>
-
-                <li class="list-group-item">
-                    <label class="fileContainer">
-                        <button type="button" class="btn btn-primary btn-block">Wczytaj nowy plik</button>
-                        <input type="file" id="file-input" accept=".json"/>
-                    </label>
-                    <div class="alert alert-success alert-dismissable fade in hidden" id="alertFile-success">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Plik wczytano poprawnie.</strong>
-                    </div>
-                    <div class="alert alert-danger alert-dismissable fade in hidden" id="alertFile-danger">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Zapomniałeś o wczytaniu pliku.</strong>
-                    </div>
-                </li>
-
-                <li class="list-group-item">
-                    <span class="error" id="error-eyes"></span>
-                    <div class="row">
-                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
-                            <h4>oczy:</h4>
-                        </div>
-                        <div class="col-sm-9 panel-list-item" ng-app="">
-                            <form name="eyesForm">
-                                <select class="form-control" id="eyes">
-                                    <option value="null">
-                                    <option value="powierzchnia">powierzchnia [km²]
-                                    <option value="ludnosc">ludność (2016)
-                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
-                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
-                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="list-group-item">
-                    <span class="error" id="error-mounth"></span>
-                    <div class="row">
-                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
-                            <h4>usta:</h4>
-                        </div>
-                        <div class="col-sm-9 panel-list-item" ng-app="">
-                            <form>
-                                <select class="form-control" id="mounth" ng-model="usta">
-                                    <option value="null">
-                                    <option value="powierzchnia">powierzchnia [km²]
-                                    <option value="ludnosc">ludność (2016)
-                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
-                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
-                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="list-group-item">
-                    <span class="error" id="error-nose"></span>
-                    <div class="row">
-                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
-                            <h4>nos:</h4>
-                        </div>
-                        <div class="col-sm-9 panel-list-item" ng-app="">
-                            <form>
-                                <select class="form-control" id="nose" ng-model="nos">
-                                    <option value="null">
-                                    <option value="powierzchnia">powierzchnia [km²]
-                                    <option value="ludnosc">ludność (2016)
-                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
-                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
-                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="list-group-item">
-                    <span class="error" id="error-eyebrow"></span>
-                    <div class="row">
-                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
-                            <h4>brwi:</h4>
-                        </div>
-                        <div class="col-sm-9 panel-list-item" ng-app="">
-                            <form>
-                                <select class="form-control" id="eyebrow" ng-model="brwi">
-                                    <option value="null">
-                                    <option value="powierzchnia">powierzchnia [km²]
-                                    <option value="ludnosc">ludność (2016)
-                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
-                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
-                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="list-group-item">
-                    <span class="error" id="error-head"></span>
-                    <div class="row">
-                        <div class="col-sm-1" style="padding: 5px; padding-right: 40px">
-                            <h4>głowa:</h4>
-                        </div>
-                        <div class="col-sm-9 panel-list-item" ng-app="">
-                            <form>
-                                <select class="form-control" id="head" ng-model="glowa">
-                                    <option value="null">
-                                    <option value="powierzchnia">powierzchnia [km²]
-                                    <option value="ludnosc">ludność (2016)
-                                    <option value="urbanizacja">poziom urbanizacji (2016) [%]
-                                    <option value="bezrobocie">stopa bezrobocia (XII 2016) [%]
-                                    <option value="PKB">PKB na 1 mieszkańca (2016) [zł]
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="list-group-item">
-                    <button type="button" id="generateFaces" class="btn btn-primary btn-block">
-                        Generuj twarze na mapie
-                    </button>
-                </li>
-
-            </ul>
-
+            <h1>Twarze Chernoffa</h1>
+            <div class="chernoff-input-file-container"></div>
+            <div class="chernoff-form-container"></div>
         </div>
-<!--Panel end-->
+        <!--Panel end-->
 
-<!--Map-->
-        <div class="col-sm-8 map" style="padding: 20px;">
-            <canvas id="mapCanvas" width="660" height="615"</canvas>
-        </div>
-<!--Map end-->
+        <!--Map-->
+        <div class="chernoff-map-container col-sm-8"></div>
+        <!--Map end-->
 
     </div>
 </div>
