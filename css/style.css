@@ -2,14 +2,35 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+h1 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #dddddd;
+}
+
 #mapCanvas {
-    padding: 20px;
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 100%;
+}
+
+.chernoff-map-container {
+    padding-top: 10px;
+}
+
+.map-legend-title {
+    text-align: center;
 }
 
 .error {
     font-size: smaller;
     color: #D00000;
     width: 100%;
+}
+
+.glyphicon-info-sign {
+    padding: 10px;
 }
 
 .fileContainer {
@@ -32,6 +53,16 @@ body {
 
 .panel-list-item {
     margin: 5px;
+}
+
+.list-group {
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.chernoff-map-legend-container {
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 .footer {

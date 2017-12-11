@@ -9,25 +9,7 @@
     <meta name="title" content="Twarze Chernoffa"/>
 
     <!--    Favicon-->
-    <!--<link rel="icon" href="img/favicon.png">-->
-
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="img/favicon.png">
     <!--    Favicon end-->
 
     <meta charset="utf-8">
@@ -41,119 +23,27 @@
     <script type="text/javascript" src="web/js/ChernoffFaces.js"></script>
     <script type="text/javascript" src="web/js/facesCoordinates.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
 
         <!--Panel-->
-        <div class="col-sm-4 panel">
+        <div class="panel col-sm-3">
             <h1>Twarze Chernoffa</h1>
             <div class="chernoff-input-file-container"></div>
             <div class="chernoff-form-container"></div>
-
-            <div class="chernoff-map-legend-container">
-                <h2>Legenda</h2>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <div class="row">
-                            <!--<h4>oczy</h4>-->
-                            <div>
-                                <img src="img/eyes1.png" alt="eyes1">
-                                <span id="eyes-map-legend-1"></span>
-                            </div>
-                            <div>
-                                <img src="img/eyes2.png" alt="eyes2">
-                                <span id="eyes-map-legend-2"></span>
-                            </div>
-                            <div>
-                                <img src="img/eyes3.png" alt="eyes3">
-                                <span id="eyes-map-legend-3"></span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <!--<h4>usta</h4>-->
-                            <div>
-                                <img src="img/mouth1.png" alt="mouth1">
-                                <span id="mouth-map-legend-1"></span>
-
-                            </div>
-
-                            <div>
-                                <img src="img/mouth2.png" alt="mouth2">
-                                <span id="mouth-map-legend-2"></span>
-
-                            </div>
-
-                            <div>
-                                <img src="img/mouth3.png" alt="mouth3">
-                                <span id="mouth-map-legend-3"></span>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <!--<h4>nos</h4>-->
-                            <div>
-                                <img src="img/nose1.png" alt="nose1">
-                                <span id="nose-map-legend-1"></span>
-                            </div>
-                            <div>
-                                <img src="img/nose2.png" alt="nose2">
-                                <span id="nose-map-legend-2"></span>
-                            </div>
-                            <div>
-                                <img src="img/nose3.png" alt="nose3">
-                                <span id="nose-map-legend-3"></span>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <!--<h4>brwi</h4>-->
-                            <div>
-                                <img src="img/eyebrows1.png" alt="eyebrows1">
-                                <span id="eyebrow-map-legend-1"></span>
-                            </div>
-                            <div>
-                                <img src="img/eyebrows2.png" alt="eyebrows2">
-                                <span id="eyebrow-map-legend-2"></span>
-                            </div>
-                            <div>
-                                <img src="img/eyebrows3.png" alt="eyebrows3">
-                                <span id="eyebrow-map-legend-3"></span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <!--<h4>głowa</h4>-->
-                            <div>
-                                <img src="img/head1.png" alt="head1">
-                                <span id="head-map-legend-1"></span>
-                            </div>
-                            <div>
-                                <img src="img/head2.png" alt="head2">
-                                <span id="head-map-legend-2"></span>
-                            </div>
-                            <div>
-                                <img src="img/head3.png" alt="head3">
-                                <span id="head-map-legend-3"></span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
         </div>
         <!--Panel end-->
 
         <!--Map-->
-        <div class="chernoff-map-container col-sm-8"></div>
+        <div class="chernoff-map-container col-sm-6"></div>
         <!--Map end-->
+
+        <!--Map legend-->
+        <div class="chernoff-map-legend-container col-sm-3"></div>
+        <!--Map legend end-->
 
     </div>
 </div>
