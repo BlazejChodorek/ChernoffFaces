@@ -4,6 +4,7 @@ Twarze Chernoffa, wynalezione przez Hermana Chernoffa, wyświetlają wielowymiar
 
 Aby uruchomić aplikację należy wypakować archiwum a następnie za pomocą przeglądarki internetowej uruchomić plik "index.html".
 
+![alt text](https://github.com/BlazejChodorek/ChernoffFaces/blob/master/screen1.png?raw=true)
 
 Dokumentacja
 ===
