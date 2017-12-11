@@ -3,50 +3,98 @@
     {
       "id": 0,
       "wojewodztwo": "dolnośląskie",
-      "ludność": {
-        "value": 2904198,
-        "unit": "(2016)"
-      },
-      "bezrobocie": {
-        "value": 7.3,
-        "unit": "%"
-      }
+      "powierzchnia[km²]": 19946.70,
+      "ludność": 2904198
     },
     {
       "id": 1,
       "wojewodztwo": "kujawsko-pomorskie",
-      "ludność": {
-        "value": 2086210,
-        "unit": "(2016)"
-      },
-      "bezrobocie": {
-        "value": 12.1,
-        "unit": "%"
-      }
+      "powierzchnia[km²]": 17971.34,
+      "ludność": 2086210
     },
     {
       "id": 2,
       "wojewodztwo": "lubelskie",
-      "ludność": {
-        "value": 2139726,
-        "unit": "(2016)"
-      },
-      "bezrobocie": {
-        "value": 10.4,
-        "unit": "%"
-      }
+      "powierzchnia[km²]": 25122.46,
+      "ludność": 2139726
     },
     {
       "id": 3,
       "wojewodztwo": "lubuskie",
-      "ludność": {
-        "value": 1018084,
-        "unit": "(2016)"
-      },
-      "bezrobocie": {
-        "value": 8.7,
-        "unit": "%"
-      }
+      "powierzchnia[km²]": 13987.93,
+      "ludność": 1018084
+    },
+    {
+      "id": 4,
+      "wojewodztwo": "łódzkie",
+      "powierzchnia[km²]": 18218.95,
+      "ludność": 2493603
+    },
+    {
+      "id": 5,
+      "wojewodztwo": "małopolskie",
+      "powierzchnia[km²]": 15182.79,
+      "ludność": 3372618
+    },
+    {
+      "id": 6,
+      "wojewodztwo": "mazowieckie",
+      "powierzchnia[km²]": 35558.47,
+      "ludność": 5349114
+    },
+    {
+      "id": 7,
+      "wojewodztwo": "opolskie",
+      "powierzchnia[km²]": 9411.87,
+      "ludność": 996011
+    },
+    {
+      "id": 8,
+      "wojewodztwo": "podkarpackie",
+      "powierzchnia[km²]": 17845.76,
+      "ludność": 2127657
+    },
+    {
+      "id": 9,
+      "wojewodztwo": "podlaskie",
+      "powierzchnia[km²]": 20187.02,
+      "ludność": 1188800
+    },
+    {
+      "id": 10,
+      "wojewodztwo": "pomorskie",
+      "powierzchnia[km²]": 18310.34,
+      "ludność": 2307710
+    },
+    {
+      "id": 11,
+      "wojewodztwo": "śląskie",
+      "powierzchnia[km²]": 12333.09,
+      "ludność": 4570849
+    },
+    {
+      "id": 12,
+      "wojewodztwo": "świętokrzyskie",
+      "powierzchnia[km²]": 11710.50,
+      "ludność": 1257179
+    },
+    {
+      "id": 13,
+      "wojewodztwo": "warmińsko-mazurskie",
+      "powierzchnia[km²]": 24173.47,
+      "ludność": 1439675
+    },
+    {
+      "id": 14,
+      "wojewodztwo": "wielkopolskie",
+      "powierzchnia[km²]": 29826.50,
+      "ludność": 3475323
+    },
+    {
+      "id": 15,
+      "wojewodztwo": "zachodniopomorskie",
+      "powierzchnia[km²]": 22892.48,
+      "ludność": 1710482
     }
   ]
 }

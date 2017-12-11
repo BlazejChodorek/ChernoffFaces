@@ -3,146 +3,146 @@
     {
       "id": 0,
       "wojewodztwo": "dolnośląskie",
-      "powierzchnia": 19946.70,
+      "powierzchnia[km²]": 19946.70,
       "ludność": 2904198,
-      "urbanizacja": 69.1,
-      "bezrobocie": 7.3,
-      "PKB": 50031
+      "urbanizacja[%]": 69.1,
+      "bezrobocie[%]": 7.3,
+      "PKB[zł]": 50031
     },
     {
       "id": 1,
       "wojewodztwo": "kujawsko-pomorskie",
-      "powierzchnia": 17971.34,
+      "powierzchnia[km²]": 17971.34,
       "ludność": 2086210,
-      "urbanizacja": 59.6,
-      "bezrobocie": 12.1,
-      "PKB": 36379
+      "urbanizacja[%]": 59.6,
+      "bezrobocie[%]": 12.1,
+      "PKB[zł]": 36379
     },
     {
       "id": 2,
       "wojewodztwo": "lubelskie",
-      "powierzchnia": 25122.46,
+      "powierzchnia[km²]": 25122.46,
       "ludność": 2139726,
-      "urbanizacja": 46.4,
-      "bezrobocie": 10.4,
-      "PKB": 31170
+      "urbanizacja[%]": 46.4,
+      "bezrobocie[%]": 10.4,
+      "PKB[zł]": 31170
     },
     {
       "id": 3,
       "wojewodztwo": "lubuskie",
-      "powierzchnia": 13987.93,
+      "powierzchnia[km²]": 13987.93,
       "ludność": 1018084,
-      "urbanizacja": 65.0,
-      "bezrobocie": 8.7,
-      "PKB": 37635
+      "urbanizacja[%]": 65.0,
+      "bezrobocie[%]": 8.7,
+      "PKB[zł]": 37635
     },
     {
       "id": 4,
       "wojewodztwo": "łódzkie",
-      "powierzchnia": 18218.95,
+      "powierzchnia[km²]": 18218.95,
       "ludność": 2493603,
-      "urbanizacja": 63.1,
-      "bezrobocie": 8.6,
-      "PKB": 41839
+      "urbanizacja[%]": 63.1,
+      "bezrobocie[%]": 8.6,
+      "PKB[zł]": 41839
     },
     {
       "id": 5,
       "wojewodztwo": "małopolskie",
-      "powierzchnia": 15182.79,
+      "powierzchnia[km²]": 15182.79,
       "ludność": 3372618,
-      "urbanizacja": 48.5,
-      "bezrobocie": 6.7,
-      "PKB": 39834
+      "urbanizacja[%]": 48.5,
+      "bezrobocie[%]": 6.7,
+      "PKB[zł]": 39834
     },
     {
       "id": 6,
       "wojewodztwo": "mazowieckie",
-      "powierzchnia": 35558.47,
+      "powierzchnia[km²]": 35558.47,
       "ludność": 5349114,
-      "urbanizacja": 64.3,
-      "bezrobocie": 7.2,
-      "PKB": 71659
+      "urbanizacja[%]": 64.3,
+      "bezrobocie[%]": 7.2,
+      "PKB[zł]": 71659
     },
     {
       "id": 7,
       "wojewodztwo": "opolskie",
-      "powierzchnia": 9411.87,
+      "powierzchnia[km²]": 9411.87,
       "ludność": 996011,
-      "urbanizacja": 51.9,
-      "bezrobocie": 9.0,
-      "PKB": 36299
+      "urbanizacja[%]": 51.9,
+      "bezrobocie[%]": 9.0,
+      "PKB[zł]": 36299
     },
     {
       "id": 8,
       "wojewodztwo": "podkarpackie",
-      "powierzchnia": 17845.76,
+      "powierzchnia[km²]": 17845.76,
       "ludność": 2127657,
-      "urbanizacja": 41.3,
-      "bezrobocie": 11.6,
-      "PKB": 31642
+      "urbanizacja[%]": 41.3,
+      "bezrobocie[%]": 11.6,
+      "PKB[zł]": 31642
     },
     {
       "id": 9,
       "wojewodztwo": "podlaskie",
-      "powierzchnia": 20187.02,
+      "powierzchnia[km²]": 20187.02,
       "ludność": 1188800,
-      "urbanizacja": 60.6,
-      "bezrobocie": 10.4,
-      "PKB": 32350
+      "urbanizacja[%]": 60.6,
+      "bezrobocie[%]": 10.4,
+      "PKB[zł]": 32350
     },
     {
       "id": 10,
       "wojewodztwo": "pomorskie",
-      "powierzchnia": 18310.34,
+      "powierzchnia[km²]": 18310.34,
       "ludność": 2307710,
-      "urbanizacja": 64.4,
-      "bezrobocie": 7.3,
-      "PKB": 42558
+      "urbanizacja[%]": 64.4,
+      "bezrobocie[%]": 7.3,
+      "PKB[zł]": 42558
     },
     {
       "id": 11,
       "wojewodztwo": "śląskie",
-      "powierzchnia": 12333.09,
+      "powierzchnia[km²]": 12333.09,
       "ludność": 4570849,
-      "urbanizacja": 77.1,
-      "bezrobocie": 6.6,
-      "PKB": 46499
+      "urbanizacja[%]": 77.1,
+      "bezrobocie[%]": 6.6,
+      "PKB[zł]": 46499
     },
     {
       "id": 12,
       "wojewodztwo": "świętokrzyskie",
-      "powierzchnia": 11710.50,
+      "powierzchnia[km²]": 11710.50,
       "ludność": 1257179,
-      "urbanizacja": 44.6,
-      "bezrobocie": 10.8,
-      "PKB": 32640
+      "urbanizacja[%]": 44.6,
+      "bezrobocie[%]": 10.8,
+      "PKB[zł]": 32640
     },
     {
       "id": 13,
       "wojewodztwo": "warmińsko-mazurskie",
-      "powierzchnia": 24173.47,
+      "powierzchnia[km²]": 24173.47,
       "ludność": 1439675,
-      "urbanizacja": 59.1,
-      "bezrobocie": 14.2,
-      "PKB": 31955
+      "urbanizacja[%]": 59.1,
+      "bezrobocie[%]": 14.2,
+      "PKB[zł]": 31955
     },
     {
       "id": 14,
       "wojewodztwo": "wielkopolskie",
-      "powierzchnia": 29826.50,
+      "powierzchnia[km²]": 29826.50,
       "ludność": 3475323,
-      "urbanizacja": 54.9,
-      "bezrobocie": 5.0,
-      "PKB": 47992
+      "urbanizacja[%]": 54.9,
+      "bezrobocie[%]": 5.0,
+      "PKB[zł]": 47992
     },
     {
       "id": 15,
       "wojewodztwo": "zachodniopomorskie",
-      "powierzchnia": 22892.48,
+      "powierzchnia[km²]": 22892.48,
       "ludność": 1710482,
-      "urbanizacja": 68.6,
-      "bezrobocie": 11.0,
-      "PKB": 37461
+      "urbanizacja[%]": 68.6,
+      "bezrobocie[%]": 11.0,
+      "PKB[zł]": 37461
     }
   ]
 }
