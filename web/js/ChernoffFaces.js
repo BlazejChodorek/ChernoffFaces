@@ -35,7 +35,6 @@ function ChernoffFaces() {
             dynamicContext.drawImage(map, 0, 0);
 
             ctx = ctx.drawImage(dynamicCanvas, 0, 0);
-            // window.open(canvas.toDataURL());
         };
     }
 
@@ -48,22 +47,21 @@ function ChernoffFaces() {
          * Input do wczytania pliku, akceptowane są tylko pliki z rozszerzeniem .json.
          */
         $(".chernoff-input-file-container").html(
-            "<ul class=\"list-group\">\n" +
-            "<li class=\"list-group-item\">\n" +
             "<label class=\"fileContainer\">\n" +
-            "<button type=\"button\" class=\"btn btn-primary btn-block\">Wczytaj nowy plik</button>\n" +
+            "<button type=\"button\" class=\"btn btn-primary btn-block btn-sm\">" +
+            "<span class=\"glyphicon glyphicon-open-file\"></span>" +
+            "Wczytaj nowy plik .json" +
+            "</button>\n" +
             "<input type=\"file\" id=\"file-input\" accept=\".json\"/>\n" +
             "</label>\n" +
             "<div class=\"alert alert-success alert-dismissable fade in hidden\" id=\"alertFile-success\">\n" +
             "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n" +
-            "<strong>Plik wczytano poprawnie.</strong>\n" +
+            "<strong>Plik wczytano poprawnie</strong> <span class=\"glyphicon glyphicon-ok\"></span>\n" +
             "</div>\n" +
             "<div class=\"alert alert-danger alert-dismissable fade in hidden\" id=\"alertFile-danger\">\n" +
             "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\n" +
             "<strong>Zapomniałeś o wczytaniu pliku.</strong>\n" +
-            "</div>\n" +
-            "</li>" +
-            "</ul>"
+            "</div>\n"
         );
 
         /**
@@ -96,13 +94,6 @@ function ChernoffFaces() {
         }
 
         document.getElementById('file-input').addEventListener('change', readSingleFile, false);
-
-        $("#generateFaces").on('click', function (event) {
-
-            if ($('#alertFile-success').hasClass('hidden')) {
-                $('#alertFile-danger').removeClass('hidden');
-            }
-        });
     }
 
     /**
@@ -121,10 +112,15 @@ function ChernoffFaces() {
             "                            <div class=\"col-sm-1\" style=\"padding: 5px; padding-right: 40px\">\n" +
             "                                <h4>oczy:</h4>\n" +
             "                            </div>\n" +
-            "                            <div class=\"col-sm-9 panel-list-item\">\n" +
+            "                            <div class=\"col-sm-7 panel-list-item\">\n" +
             "                                <form class=\"chernoff-form\">\n" +
             "                                    <select class=\"form-control\" id=\"eyes\"></select>\n" +
             "                                </form>\n" +
+            "                            </div>\n" +
+            "                            <div class=\"col-sm-2 panel-list-item\">\n" +
+            "                                  <button type=\"button\" class=\"info btn btn-default btn-xs disabled\" id=\"eyes-info\">\n" +
+            "                                       <span class=\"glyphicon glyphicon-info-sign\"></span>\n" +
+            "                                   </button>" +
             "                            </div>\n" +
             "                        </div>\n" +
             "                    </li>\n" +
@@ -135,10 +131,15 @@ function ChernoffFaces() {
             "                            <div class=\"col-sm-1\" style=\"padding: 5px; padding-right: 40px\">\n" +
             "                                <h4>usta:</h4>\n" +
             "                            </div>\n" +
-            "                            <div class=\"col-sm-9 panel-list-item\">\n" +
+            "                            <div class=\"col-sm-7 panel-list-item\">\n" +
             "                                <form class=\"chernoff-form\">\n" +
             "                                    <select class=\"form-control\" id=\"mouth\"></select>\n" +
             "                                </form>\n" +
+            "                            </div>\n" +
+            "                            <div class=\"col-sm-2 panel-list-item\">\n" +
+            "                                  <button type=\"button\" class=\"info btn btn-default btn-xs disabled\" id=\"mouth-info\">\n" +
+            "                                       <span class=\"glyphicon glyphicon-info-sign\"></span>\n" +
+            "                                   </button>" +
             "                            </div>\n" +
             "                        </div>\n" +
             "                    </li>\n" +
@@ -149,10 +150,15 @@ function ChernoffFaces() {
             "                            <div class=\"col-sm-1\" style=\"padding: 5px; padding-right: 40px\">\n" +
             "                                <h4>nos:</h4>\n" +
             "                            </div>\n" +
-            "                            <div class=\"col-sm-9 panel-list-item\">\n" +
+            "                            <div class=\"col-sm-7 panel-list-item\">\n" +
             "                                <form class=\"chernoff-form\">\n" +
             "                                    <select class=\"form-control\" id=\"nose\"></select>\n" +
             "                                </form>\n" +
+            "                            </div>\n" +
+            "                            <div class=\"col-sm-2 panel-list-item\">\n" +
+            "                                  <button type=\"button\" class=\"info btn btn-default btn-xs disabled\" id=\"nose-info\">\n" +
+            "                                       <span class=\"glyphicon glyphicon-info-sign\"></span>\n" +
+            "                                   </button>" +
             "                            </div>\n" +
             "                        </div>\n" +
             "                    </li>\n" +
@@ -163,10 +169,15 @@ function ChernoffFaces() {
             "                            <div class=\"col-sm-1\" style=\"padding: 5px; padding-right: 40px\">\n" +
             "                                <h4>brwi:</h4>\n" +
             "                            </div>\n" +
-            "                            <div class=\"col-sm-9 panel-list-item\">\n" +
+            "                            <div class=\"col-sm-7 panel-list-item\">\n" +
             "                                <form class=\"chernoff-form\">\n" +
             "                                    <select class=\"form-control\" id=\"eyebrow\"></select>\n" +
             "                                </form>\n" +
+            "                            </div>\n" +
+            "                            <div class=\"col-sm-2 panel-list-item\">\n" +
+            "                                  <button type=\"button\" class=\"info btn btn-default btn-xs disabled\" id=\"eyebrow-info\">\n" +
+            "                                       <span class=\"glyphicon glyphicon-info-sign\"></span>\n" +
+            "                                   </button>" +
             "                            </div>\n" +
             "                        </div>\n" +
             "                    </li>\n" +
@@ -177,20 +188,23 @@ function ChernoffFaces() {
             "                            <div class=\"col-sm-1\" style=\"padding: 5px; padding-right: 40px\">\n" +
             "                                <h4>głowa:</h4>\n" +
             "                            </div>\n" +
-            "                            <div class=\"col-sm-9 panel-list-item\">\n" +
+            "                            <div class=\"col-sm-7 panel-list-item\">\n" +
             "                                <form class=\"chernoff-form\">\n" +
             "                                    <select class=\"form-control\" id=\"head\"></select>\n" +
             "                                </form>\n" +
             "                            </div>\n" +
+            "                            <div class=\"col-sm-2 panel-list-item\">\n" +
+            "                                  <button type=\"button\" class=\"info btn btn-default btn-xs disabled\" id=\"head-info\">\n" +
+            "                                       <span class=\"glyphicon glyphicon-info-sign\"></span>\n" +
+            "                                   </button>" +
+            "                            </div>\n" +
             "                        </div>\n" +
             "                    </li>\n" +
-            "\n" +
-            "                    <li class=\"list-group-item\">\n" +
+            "</ul>" +
             "                        <button type=\"button\" id=\"generateFaces\" class=\"btn btn-primary btn-block\">\n" +
+            "                            <span class=\"glyphicon glyphicon-refresh\"></span> \n" +
             "                            Generuj twarze na mapie\n" +
-            "                        </button>\n" +
-            "                    </li>" +
-            "</ul>"
+            "                        </button>\n"
         );
 
         /**
@@ -205,39 +219,122 @@ function ChernoffFaces() {
             content += "<option value=" + options[i] + ">" + options[i] + "\n";
 
         $(".form-control").html(content);
-    }
 
-    /**
-     * Funkcja generująca legendę mapy.
-     * @param param - Tablica z informacją do jakiej częsci twarzy jakie dane zostały przypisane.
-     */
-    function generateMapLegend(param) {
+        $("#generateFaces").on('click', function (event) {
 
-        var eyesIndexes = getIndexes(param.eyes);
-        var mouthIndexes = getIndexes(param.mouth);
-        var noseIndexes = getIndexes(param.nose);
-        var eyebrowIndexes = getIndexes(param.eyebrow);
-        var headIndexes = getIndexes(param.head);
+            if ($('#eyes-info').hasClass('btn-primary')) {
+                $('#eyes-info').removeClass('btn-primary');
+                $('#eyes-info').addClass('btn-default');
+            }
+            if ($('#mouth-info').hasClass('btn-primary')) {
+                $('#mouth-info').removeClass('btn-primary');
+                $('#mouth-info').addClass('btn-default');
+            }
+            if ($('#nose-info').hasClass('btn-primary')) {
+                $('#nose-info').removeClass('btn-primary');
+                $('#nose-info').addClass('btn-default');
+            }
+            if ($('#eyebrow-info').hasClass('btn-primary')) {
+                $('#eyebrow-info').removeClass('btn-primary');
+                $('#eyebrow-info').addClass('btn-default');
+            }
+            if ($('#head-info').hasClass('btn-primary')) {
+                $('#head-info').removeClass('btn-primary');
+                $('#head-info').addClass('btn-default');
+            }
 
-        $("#eyes-map-legend-1").html(eyesIndexes.index0 + " - " + eyesIndexes.index1);
-        $("#eyes-map-legend-2").html(eyesIndexes.index1 + " - " + eyesIndexes.index2);
-        $("#eyes-map-legend-3").html(eyesIndexes.index2 + " - " + eyesIndexes.index3);
+            $('.info').removeClass('disabled');
+            $('#map-legend-eyes').addClass('hidden');
+            $('#map-legend-mouth').addClass('hidden');
+            $('#map-legend-nose').addClass('hidden');
+            $('#map-legend-eyebrow').addClass('hidden');
+            $('#map-legend-head').addClass('hidden');
+        });
 
-        $("#mouth-map-legend-1").html(mouthIndexes.index0 + " - " + mouthIndexes.index1);
-        $("#mouth-map-legend-2").html(mouthIndexes.index1 + " - " + mouthIndexes.index2);
-        $("#mouth-map-legend-3").html(mouthIndexes.index2 + " - " + mouthIndexes.index3);
+        $("#eyes-info").on('click', function (event) {
 
-        $("#nose-map-legend-1").html(noseIndexes.index0 + " - " + noseIndexes.index1);
-        $("#nose-map-legend-2").html(noseIndexes.index1 + " - " + noseIndexes.index2);
-        $("#nose-map-legend-3").html(noseIndexes.index2 + " - " + noseIndexes.index3);
+            if ($('#eyes-info').hasClass('clicked')) {
 
-        $("#eyebrow-map-legend-1").html(eyebrowIndexes.index0 + " - " + eyebrowIndexes.index1);
-        $("#eyebrow-map-legend-2").html(eyebrowIndexes.index1 + " - " + eyebrowIndexes.index2);
-        $("#eyebrow-map-legend-3").html(eyebrowIndexes.index2 + " - " + eyebrowIndexes.index3);
+                $('#eyes-info').removeClass('clicked');
+                $('#map-legend-eyes').addClass('hidden');
+                $('#eyes-info').addClass('btn-default');
+                $('#eyes-info').removeClass('btn-primary');
+            } else if ($('#eyes-info').hasClass('disabled')) {
+            } else {
+                $('#eyes-info').addClass('clicked');
+                $('#map-legend-eyes').removeClass('hidden');
+                $('#eyes-info').removeClass('btn-default');
+                $('#eyes-info').addClass('btn-primary');
+            }
+        });
 
-        $("#head-map-legend-1").html(headIndexes.index0 + " - " + headIndexes.index1);
-        $("#head-map-legend-2").html(headIndexes.index1 + " - " + headIndexes.index2);
-        $("#head-map-legend-3").html(headIndexes.index2 + " - " + headIndexes.index3);
+        $("#mouth-info").on('click', function (event) {
+
+            if ($('#mouth-info').hasClass('clicked')) {
+
+                $('#mouth-info').removeClass('clicked');
+                $('#map-legend-mouth').addClass('hidden');
+                $('#mouth-info').addClass('btn-default');
+                $('#mouth-info').removeClass('btn-primary');
+            } else if ($('#mouth-info').hasClass('disabled')) {
+            } else {
+                $('#mouth-info').addClass('clicked');
+                $('#map-legend-mouth').removeClass('hidden');
+                $('#mouth-info').removeClass('btn-default');
+                $('#mouth-info').addClass('btn-primary');
+            }
+        });
+
+        $("#nose-info").on('click', function (event) {
+
+            if ($('#nose-info').hasClass('clicked')) {
+
+                $('#nose-info').removeClass('clicked');
+                $('#map-legend-nose').addClass('hidden');
+                $('#nose-info').addClass('btn-default');
+                $('#nose-info').removeClass('btn-primary');
+            } else if ($('#nose-info').hasClass('disabled')) {
+            } else {
+                $('#nose-info').addClass('clicked');
+                $('#map-legend-nose').removeClass('hidden');
+                $('#nose-info').removeClass('btn-default');
+                $('#nose-info').addClass('btn-primary');
+            }
+        });
+
+        $("#eyebrow-info").on('click', function (event) {
+
+            if ($('#eyebrow-info').hasClass('clicked')) {
+
+                $('#eyebrow-info').removeClass('clicked');
+                $('#map-legend-eyebrow').addClass('hidden');
+                $('#eyebrow-info').addClass('btn-default');
+                $('#eyebrow-info').removeClass('btn-primary');
+            } else if ($('#eyebrow-info').hasClass('disabled')) {
+            } else {
+                $('#eyebrow-info').addClass('clicked');
+                $('#map-legend-eyebrow').removeClass('hidden');
+                $('#eyebrow-info').removeClass('btn-default');
+                $('#eyebrow-info').addClass('btn-primary');
+            }
+        });
+
+        $("#head-info").on('click', function (event) {
+
+            if ($('#head-info').hasClass('clicked')) {
+
+                $('#head-info').removeClass('clicked');
+                $('#map-legend-head').addClass('hidden');
+                $('#head-info').addClass('btn-default');
+                $('#head-info').removeClass('btn-primary');
+            } else if ($('#head-info').hasClass('disabled')) {
+            } else {
+                $('#head-info').addClass('clicked');
+                $('#map-legend-head').removeClass('hidden');
+                $('#head-info').removeClass('btn-default');
+                $('#head-info').addClass('btn-primary');
+            }
+        });
     }
 
     /**
@@ -373,17 +470,6 @@ function ChernoffFaces() {
         if (array[voivodeshipId] < array[index1]) return 1;
         if (array[voivodeshipId] > array[index2]) return 3;
         if ((array[voivodeshipId] >= array[index1]) && (array[voivodeshipId] <= array[index2])) return 2;
-    }
-
-    function getIndexes(array) {
-
-        array.sort();
-        var index0 = array[0];
-        var index1 = array[Math.round(array.length / 3)];
-        var index2 = array[(Math.round(array.length / 3)) * 2];
-        var index3 = array[array.length - 1];
-
-        return {"index0": index0, "index1": index1, "index2": index2, "index3": index3};
     }
 
     /**
@@ -604,28 +690,76 @@ function ChernoffFaces() {
         var nose;
         var eyebrow;
         var head;
+        var eyesUnit;
+        var mouthUnit;
+        var noseUnit;
+        var eyebrowUnit;
+        var headUnit;
+        var eyesOption;
+        var mouthOption;
+        var noseOption;
+        var eyebrowOption;
+        var headOption;
         var options = getOptions(data, false);
 
         for (var i = 0; i < options.length; i++) {
-            if (form.eyesInput == options[i])
+            if (form.eyesInput == options[i]) {
                 eyes = dataArrays[options[i]];
+                eyesUnit = getDataUnit(options[i]);
+                eyesOption = options[i];
+            }
 
-            if (form.mouthInput == options[i])
+            if (form.mouthInput == options[i]) {
                 mouth = dataArrays[options[i]];
+                mouthUnit = getDataUnit(options[i]);
+                mouthOption = options[i];
+            }
 
-            if (form.noseInput == options[i])
+            if (form.noseInput == options[i]) {
                 nose = dataArrays[options[i]];
+                noseUnit = getDataUnit(options[i]);
+                noseOption = options[i];
+            }
 
-            if (form.eyebrowInput == options[i])
+            if (form.eyebrowInput == options[i]) {
                 eyebrow = dataArrays[options[i]];
+                eyebrowUnit = getDataUnit(options[i]);
+                eyebrowOption = options[i];
+            }
 
-            if (form.headInput == options[i])
+            if (form.headInput == options[i]) {
                 head = dataArrays[options[i]];
+                headUnit = getDataUnit(options[i]);
+                headOption = options[i];
+            }
+
         }
 
-        var parameters = {"eyes": eyes, "mouth": mouth, "nose": nose, "eyebrow": eyebrow, "head": head};
+        var parameters = {
+            "eyes": eyes,
+            "mouth": mouth,
+            "nose": nose,
+            "eyebrow": eyebrow,
+            "head": head
+        };
 
-        generateMapLegend(parameters);
+        var dataUnits = {
+            "eyes": eyesUnit,
+            "mouth": mouthUnit,
+            "nose": noseUnit,
+            "eyebrow": eyebrowUnit,
+            "head": headUnit
+        };
+
+        var dataOptions = {
+            "eyes": eyesOption,
+            "mouth": mouthOption,
+            "nose": noseOption,
+            "eyebrow": eyebrowOption,
+            "head": headOption
+        };
+
+        generateMapLegend(parameters, dataUnits, dataOptions);
 
         return parameters;
     }
@@ -662,6 +796,193 @@ function ChernoffFaces() {
 
         if (toDisplay) return originalOptions;
         return optionsForArrays;
+    }
+
+    /**
+     * @param str - Nazwa danej.
+     * @return {string} - Jednostka danej.
+     */
+    function getDataUnit(str) {
+        String.toString();
+        return str.substring(str.lastIndexOf("[") + 1, str.lastIndexOf("]"));
+    }
+
+    /**
+     * Funkcja generująca legendę mapy.
+     * @param param - Tablica z informacją do jakiej częsci twarzy jakie dane zostały przypisane.
+     */
+    function generateMapLegend(param, units, options) {
+
+
+        $(".chernoff-map-legend-container").html(
+            "            <ul class=\"list-group\">\n" +
+            "\n" +
+            "                <li class=\"list-group-item hidden\" id=\"map-legend-eyes\">\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <h4 class=\"map-legend-title\" id=\"eyes-map-legend-title\"></h4>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/eyes1.png\" alt=\"eyes1\">\n" +
+            "                            <span id=\"eyes-map-legend-1\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/eyes2.png\" alt=\"eyes2\">\n" +
+            "                            <span id=\"eyes-map-legend-2\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/eyes3.png\" alt=\"eyes3\">\n" +
+            "                            <span id=\"eyes-map-legend-3\"></span>\n" +
+            "                        </div>\n" +
+            "                    </div>\n" +
+            "                </li>\n" +
+            "\n" +
+            "                <li class=\"list-group-item hidden\" id=\"map-legend-mouth\">\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <h4 class=\"map-legend-title\" id=\"mouth-map-legend-title\"></h4>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/mouth1.png\" alt=\"mouth1\">\n" +
+            "                            <span id=\"mouth-map-legend-1\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/mouth2.png\" alt=\"mouth2\">\n" +
+            "                            <span id=\"mouth-map-legend-2\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/mouth3.png\" alt=\"mouth3\">\n" +
+            "                            <span id=\"mouth-map-legend-3\"></span>\n" +
+            "                        </div>\n" +
+            "                    </div>\n" +
+            "                </li>\n" +
+            "\n" +
+            "                <li class=\"list-group-item hidden\" id=\"map-legend-nose\">\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <h4 class=\"map-legend-title\" id=\"nose-map-legend-title\"></h4>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/nose1.png\" alt=\"nose1\">\n" +
+            "                            <span id=\"nose-map-legend-1\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/nose2.png\" alt=\"nose2\">\n" +
+            "                            <span id=\"nose-map-legend-2\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/nose3.png\" alt=\"nose3\">\n" +
+            "                            <span id=\"nose-map-legend-3\"></span>\n" +
+            "                        </div>\n" +
+            "                    </div>\n" +
+            "                </li>\n" +
+            "\n" +
+            "                <li class=\"list-group-item hidden\" id=\"map-legend-eyebrow\">\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <h4 class=\"map-legend-title\" id=\"eyebrow-map-legend-title\"></h4>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/eyebrows1.png\" alt=\"eyebrows1\">\n" +
+            "                            <span id=\"eyebrow-map-legend-1\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/eyebrows2.png\" alt=\"eyebrows2\">\n" +
+            "                            <span id=\"eyebrow-map-legend-2\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/eyebrows3.png\" alt=\"eyebrows3\">\n" +
+            "                            <span id=\"eyebrow-map-legend-3\"></span>\n" +
+            "                        </div>\n" +
+            "                    </div>\n" +
+            "                </li>\n" +
+            "\n" +
+            "                <li class=\"list-group-item hidden\" id=\"map-legend-head\">\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <h4 class=\"map-legend-title\" id=\"head-map-legend-title\"></h4>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/head1.png\" alt=\"head1\">\n" +
+            "                            <span id=\"head-map-legend-1\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/head2.png\" alt=\"head2\">\n" +
+            "                            <span id=\"head-map-legend-2\"></span>\n" +
+            "                        </div>\n" +
+            "                        <div>\n" +
+            "                            <img src=\"img/head3.png\" alt=\"head3\">\n" +
+            "                            <span id=\"head-map-legend-3\"></span>\n" +
+            "                        </div>\n" +
+            "                    </div>\n" +
+            "                </li>\n" +
+            "\n" +
+            "            </ul>"
+        );
+
+        var eyes = param.eyes;
+        var mouth = param.mouth;
+        var nose = param.nose;
+        var eyebrow = param.eyebrow;
+        var head = param.head;
+
+        var eyesIndexes = getIndexes(eyes);
+        var mouthIndexes = getIndexes(mouth);
+        var noseIndexes = getIndexes(nose);
+        var eyebrowIndexes = getIndexes(eyebrow);
+        var headIndexes = getIndexes(head);
+
+        var eyesUnit = units.eyes;
+        var mouthUnit = units.mouth;
+        var noseUnit = units.nose;
+        var eyebrowUnit = units.eyebrow;
+        var headUnit = units.head;
+
+        var eyesOption = options.eyes;
+        var mouthOption = options.mouth;
+        var noseOption = options.nose;
+        var eyebrowOption = options.eyebrow;
+        var headOption = options.head;
+
+        $("#eyes-map-legend-title").html(eyesOption);
+        $("#mouth-map-legend-title").html(mouthOption);
+        $("#nose-map-legend-title").html(noseOption);
+        $("#eyebrow-map-legend-title").html(eyebrowOption);
+        $("#head-map-legend-title").html(headOption);
+
+        $("#eyes-map-legend-1").html(eyesIndexes.index0 + " " + eyesUnit + " - " + eyesIndexes.index1 + " " + eyesUnit);
+        $("#eyes-map-legend-2").html(eyesIndexes.index1 + " " + eyesUnit + " - " + eyesIndexes.index2 + " " + eyesUnit);
+        $("#eyes-map-legend-3").html(eyesIndexes.index2 + " " + eyesUnit + " - " + eyesIndexes.index3 + " " + eyesUnit);
+
+        $("#mouth-map-legend-1").html(mouthIndexes.index0 + " " + mouthUnit + " - " + mouthIndexes.index1 + " " + mouthUnit);
+        $("#mouth-map-legend-2").html(mouthIndexes.index1 + " " + mouthUnit + " - " + mouthIndexes.index2 + " " + mouthUnit);
+        $("#mouth-map-legend-3").html(mouthIndexes.index2 + " " + mouthUnit + " - " + mouthIndexes.index3 + " " + mouthUnit);
+
+        $("#nose-map-legend-1").html(noseIndexes.index0 + " " + noseUnit + " - " + noseIndexes.index1 + " " + noseUnit);
+        $("#nose-map-legend-2").html(noseIndexes.index1 + " " + noseUnit + " - " + noseIndexes.index2 + " " + noseUnit);
+        $("#nose-map-legend-3").html(noseIndexes.index2 + " " + noseUnit + " - " + noseIndexes.index3 + " " + noseUnit);
+
+        $("#eyebrow-map-legend-1").html(eyebrowIndexes.index0 + " " + eyebrowUnit + " - " + eyebrowIndexes.index1 + " " + eyebrowUnit);
+        $("#eyebrow-map-legend-2").html(eyebrowIndexes.index1 + " " + eyebrowUnit + " - " + eyebrowIndexes.index2 + " " + eyebrowUnit);
+        $("#eyebrow-map-legend-3").html(eyebrowIndexes.index2 + " " + eyebrowUnit + " - " + eyebrowIndexes.index3 + " " + eyebrowUnit);
+
+        $("#head-map-legend-1").html(headIndexes.index0 + " " + headUnit + " - " + headIndexes.index1 + " " + headUnit);
+        $("#head-map-legend-2").html(headIndexes.index1 + " " + headUnit + " - " + headIndexes.index2 + " " + headUnit);
+        $("#head-map-legend-3").html(headIndexes.index2 + " " + headUnit + " - " + headIndexes.index3 + " " + headUnit);
+    }
+
+    /**
+     * @param array
+     * @return {{index0: *, index1: *, index2: *, index3: *}}
+     */
+    function getIndexes(array) {
+
+        var arr = new Array();
+
+        for (var i = 0; i < array.length; i++) {
+            arr.push(array[i]);
+        }
+
+        arr.sort(function (a, b) {
+            return a - b
+        });
+
+        var index0 = arr[0];
+        var index1 = arr[Math.round(arr.length / 3)];
+        var index2 = arr[(Math.round(arr.length / 3)) * 2];
+        var index3 = arr[arr.length - 1];
+
+        return {"index0": index0, "index1": index1, "index2": index2, "index3": index3};
     }
 
 }
